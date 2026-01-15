@@ -3,7 +3,7 @@
 **Author:** Miranda S. Robertson  
 **Affiliation:** Independent Researcher, Noble, Oklahoma, USA  
 **Date:** January 2026  
-**Status:** Preprint - Validated on 7.95M PhysioNet samples (p<1.33e-216)
+**Status:** Preprint - Validated on 7.95M PhysioNet samples (p<0.0000003)
 
 ---
 
