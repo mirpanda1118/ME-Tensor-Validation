@@ -195,7 +195,7 @@ This challenges the ML requirement for EEG classification, offering a determinis
 
 ## Data Availability
 
-Validation code: https://github.com/mirpanda1118/ME-Tensor-Validation  
+Validation code: https://github.com/mirpanda1118/TEAPOT
 PhysioNet data: https://physionet.org/content/sleep-edfx/1.0.0/
 
 ---
