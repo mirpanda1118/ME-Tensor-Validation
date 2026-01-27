@@ -13,3 +13,7 @@ scikit-learn>=1.0.0
 matplotlib>=3.4.0  # For visualization
 pandas>=1.3.0      # For data handling
 jupyter>=1.0.0     # For demo notebooks
+
+# Gravitational wave data access
+gwpy>=3.0.0        # LIGO/Virgo Open Science Center data access
+gwosc>=0.7.0       # Gravitational Wave Open Science Center client
