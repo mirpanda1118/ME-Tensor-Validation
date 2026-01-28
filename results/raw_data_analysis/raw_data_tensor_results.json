@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-01-28T00:23:35.076133",
+  "methodology": "RAW_UNFILTERED_DATA",
+  "sources": [
+    "USGS",
+    "NOAA_NDBC",
+    "NOAA_SWPC",
+    "FRED",
+    "CoinDesk"
+  ],
+  "results": [
+    {
+      "signal_name": "BASELINE_system_entropy",
+      "n_samples": 10000,
+      "symmetry_delta": 0.010018214936247771,
+      "peak_count": 1087,
+      "trough_count": 1098,
+      "skewness": -0.0211859179622047,
+      "kurtosis": -0.18051955988560886,
+      "zcr": 0.15433890501451306,
+      "gradient_mean": 0.2652699533611393,
+      "data_source": "RAW_UNFILTERED",
+      "description": "System entropy (/dev/urandom, true random)"
+    }
+  ]
+}
