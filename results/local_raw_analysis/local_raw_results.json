@@ -1,0 +1,247 @@
+{
+  "timestamp": "2026-01-28T04:48:00.280372",
+  "results": [
+    {
+      "signal_name": "ENTROPY_urandom_uint8",
+      "n_samples": 50000,
+      "symmetry_delta": 0.024319942352729274,
+      "peak_count": 5551,
+      "trough_count": 5416,
+      "skewness": -0.046068661340752826,
+      "kurtosis": -0.22467549231258532,
+      "zcr": 0.14858674561421056
+    },
+    {
+      "signal_name": "ENTROPY_urandom_int16",
+      "n_samples": 25000,
+      "symmetry_delta": 0.004358881220486777,
+      "peak_count": 2753,
+      "trough_count": 2741,
+      "skewness": -0.036962601994105476,
+      "kurtosis": -0.14804036424973432,
+      "zcr": 0.1494538033692129
+    },
+    {
+      "signal_name": "ENTROPY_urandom_float32",
+      "n_samples": 12459,
+      "symmetry_delta": 0.12449799196787148,
+      "peak_count": 218,
+      "trough_count": 249,
+      "skewness": -2.397269249363756,
+      "kurtosis": 29.680721984221677,
+      "zcr": 0.026827309236947792
+    },
+    {
+      "signal_name": "TIMING_cpu_jitter",
+      "n_samples": 10000,
+      "symmetry_delta": 1.0,
+      "peak_count": 0,
+      "trough_count": 0,
+      "skewness": 28.68322100975594,
+      "kurtosis": 990.7246710533325,
+      "zcr": 0.04253828445601041
+    },
+    {
+      "signal_name": "TIMING_loop_jitter",
+      "n_samples": 10000,
+      "symmetry_delta": 0.3832599118942731,
+      "peak_count": 227,
+      "trough_count": 140,
+      "skewness": 11.291788311855472,
+      "kurtosis": 184.6555904017361,
+      "zcr": 0.07957161445300771
+    },
+    {
+      "signal_name": "FILE_urandom_raw",
+      "n_samples": 50000,
+      "symmetry_delta": 0.010713637189032177,
+      "peak_count": 5448,
+      "trough_count": 5507,
+      "skewness": -0.005065630548095116,
+      "kurtosis": -0.2416523595795348,
+      "zcr": 0.14824668440319258
+    },
+    {
+      "signal_name": "FILE_passwd",
+      "n_samples": 1238,
+      "symmetry_delta": 0.6149068322981366,
+      "peak_count": 161,
+      "trough_count": 62,
+      "skewness": -1.195759845514068,
+      "kurtosis": 1.0408554564898616,
+      "zcr": 0.12855980471928397
+    },
+    {
+      "signal_name": "PROC_proc_stat",
+      "n_samples": 443,
+      "symmetry_delta": 1.0,
+      "peak_count": 0,
+      "trough_count": 0,
+      "skewness": 8.089055009826396,
+      "kurtosis": 69.92915625421026,
+      "zcr": 0.004608294930875576
+    },
+    {
+      "signal_name": "PROC_proc_meminfo",
+      "n_samples": 21,
+      "symmetry_delta": 1.0,
+      "peak_count": 0,
+      "trough_count": 0,
+      "skewness": 1.6647433204541213,
+      "kurtosis": 1.3973376351796336,
+      "zcr": 0.08333333333333333
+    },
+    {
+      "signal_name": "RANDOM_numpy_normal",
+      "n_samples": 10000,
+      "symmetry_delta": 0.009319664492078328,
+      "peak_count": 1073,
+      "trough_count": 1063,
+      "skewness": -0.0014923159871925561,
+      "kurtosis": 0.14744388223348093,
+      "zcr": 0.15313782404163748
+    },
+    {
+      "signal_name": "RANDOM_numpy_uniform",
+      "n_samples": 10000,
+      "symmetry_delta": 0.013513513513513487,
+      "peak_count": 1110,
+      "trough_count": 1095,
+      "skewness": -0.01673021526218195,
+      "kurtosis": -0.2249348822953805,
+      "zcr": 0.14352917625863276
+    },
+    {
+      "signal_name": "RANDOM_numpy_pcg64",
+      "n_samples": 10000,
+      "symmetry_delta": 0.05501330967169471,
+      "peak_count": 1127,
+      "trough_count": 1065,
+      "skewness": -0.11981014232877676,
+      "kurtosis": 0.042256402821316374,
+      "zcr": 0.14823341006906215
+    },
+    {
+      "signal_name": "RANDOM_numpy_mt19937",
+      "n_samples": 10000,
+      "symmetry_delta": 0.04897595725734638,
+      "peak_count": 1123,
+      "trough_count": 1068,
+      "skewness": -0.08608034163977173,
+      "kurtosis": -0.06333187794124973,
+      "zcr": 0.1475327795015514
+    },
+    {
+      "signal_name": "RANDOM_numpy_poisson",
+      "n_samples": 10000,
+      "symmetry_delta": 0.07527881040892193,
+      "peak_count": 995,
+      "trough_count": 1076,
+      "skewness": 0.22393794590321825,
+      "kurtosis": 0.07443560550120765,
+      "zcr": 0.14893404063657292
+    },
+    {
+      "signal_name": "RANDOM_numpy_exponential",
+      "n_samples": 10000,
+      "symmetry_delta": 0.11082251082251082,
+      "peak_count": 1027,
+      "trough_count": 1155,
+      "skewness": 0.6506373362572262,
+      "kurtosis": 0.37929617871648613,
+      "zcr": 0.14442998698828946
+    },
+    {
+      "signal_name": "RANDOM_numpy_chisquare",
+      "n_samples": 10000,
+      "symmetry_delta": 0.1779242174629324,
+      "peak_count": 998,
+      "trough_count": 1214,
+      "skewness": 0.6349042008515265,
+      "kurtosis": 0.5239514688172284,
+      "zcr": 0.14152737463717346
+    },
+    {
+      "signal_name": "MATH_pi_convergence",
+      "n_samples": 10000,
+      "symmetry_delta": 0.03125,
+      "peak_count": 93,
+      "trough_count": 96,
+      "skewness": 34.843617620276525,
+      "kurtosis": 3300.8193616702088,
+      "zcr": 0.9998999099189271
+    },
+    {
+      "signal_name": "MATH_fibonacci_ratios",
+      "n_samples": 9999,
+      "symmetry_delta": 0.33333333333333337,
+      "peak_count": 3,
+      "trough_count": 2,
+      "skewness": -32.7784221017202,
+      "kurtosis": 5147.2913430271465,
+      "zcr": 0.0011011011011011012
+    },
+    {
+      "signal_name": "MATH_prime_gaps",
+      "n_samples": 999,
+      "symmetry_delta": 0.09322033898305082,
+      "peak_count": 107,
+      "trough_count": 118,
+      "skewness": 0.49689702709617944,
+      "kurtosis": 0.13050855377011983,
+      "zcr": 0.15757575757575756
+    },
+    {
+      "signal_name": "MATH_collatz_lengths",
+      "n_samples": 10000,
+      "symmetry_delta": 0.10952380952380958,
+      "peak_count": 748,
+      "trough_count": 840,
+      "skewness": 0.1707743060188966,
+      "kurtosis": -0.21380453537644017,
+      "zcr": 0.10739665699129217
+    },
+    {
+      "signal_name": "MATH_logistic_map",
+      "n_samples": 10000,
+      "symmetry_delta": 0.10784837159636951,
+      "peak_count": 1671,
+      "trough_count": 1873,
+      "skewness": -0.17877360684655993,
+      "kurtosis": -0.08391142072049584,
+      "zcr": 0.25222700430387346
+    }
+  ],
+  "groups": {
+    "ENTROPY": {
+      "mean": 0.05105893851369584,
+      "std": 0.05256476588974298,
+      "n": 3
+    },
+    "TIMING": {
+      "mean": 0.6916299559471366,
+      "std": 0.30837004405286345,
+      "n": 2
+    },
+    "FILE": {
+      "mean": 0.3128102347435844,
+      "std": 0.3020965975545522,
+      "n": 2
+    },
+    "PROC": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 2
+    },
+    "RANDOM": {
+      "mean": 0.0701211405184283,
+      "std": 0.05461725885283183,
+      "n": 7
+    },
+    "MATH": {
+      "mean": 0.13503517068731266,
+      "std": 0.10318134977510621,
+      "n": 5
+    }
+  }
+}
