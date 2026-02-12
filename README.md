@@ -94,7 +94,9 @@ TEAPOT/
 ├── README.md                          # This file
 ├── LICENSE                            # MIT License
 ├── tensor_validation_framework.py     # Validation code (sanitized)
-├── TEAPOT_Research_Paper.md           # Academic documentation└── .gitignore                         # Python ignore rules
+├── complete_unbiased_validation.py    # Complete validation with real EEG data
+├── TEAPOT_Research_Paper.md           # Academic documentation
+└── .gitignore                         # Python ignore rules
 ```
 
 ## Usage
@@ -102,10 +104,27 @@ TEAPOT/
 ### Installation
 
 ```bash
-pip install numpy scipy mne
+pip install numpy scipy mne matplotlib
 ```
 
-### Running Validation
+### Running Complete Unbiased Validation
+
+The complete validation script tests TEAPOT coefficients against random baselines using real PhysioNet EEG data:
+
+```bash
+python complete_unbiased_validation.py
+```
+
+This will:
+1. Download real EEG data from PhysioNet Sleep-EDF database (first run only)
+2. Test TEAPOT tensor against 50 random tensors
+3. Compute statistical significance (Z-scores, p-values)
+4. Generate comprehensive validation plots
+5. Report pass/fail on 4 independent tests
+
+**Note**: This script requires real EEG data and will NOT fallback to synthetic data.
+
+### Running Framework Validation
 
 ```python
 import numpy as np
