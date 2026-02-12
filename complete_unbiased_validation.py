@@ -34,68 +34,59 @@ print()
 
 def load_real_eeg_data(subject_id: int = 0, recording_id: int = 0):
     """
-    Load real PhysioNet Sleep-EDF data.
+    Load real PhysioNet Sleep-EDF data (sleep-cassette/age dataset).
     
     Args:
-        subject_id: Subject number (0-19 for sleep-cassette)
-        recording_id: Recording number (0 or 1 for each subject)
+        subject_id: 0-19 for SC4001E0-SC4020E0
+        recording_id: 0 or 1 per subject
     
     Returns:
-        signal: Raw EEG data
-        fs: Sampling frequency
-        annotations: Sleep stage annotations
+        signal: Fpz-Cz EEG (µV)
+        fs: Sampling freq (~100 Hz)
+        annotations: Sleep stages
     """
     print("\n" + "="*80)
-    print("LOADING REAL EEG DATA FROM PHYSIONET")
+    print("LOADING REAL EEG DATA FROM PHYSIONET (AGE/SLEEP-CASSETTE)")
     print("="*80)
     
     try:
         import mne
         from mne.datasets import sleep_physionet
         
-        print(f"\nDownloading/Loading subject {subject_id}, recording {recording_id}...")
-        print("(This may take a few minutes on first run)")
+        print(f"\nDownloading/Loading SC{subject_id+1:02d}E{recording_id}...")
+        print("(~500MB first run, 5-10 min)")
         
-        # Fetch data
-        data_path = sleep_physionet.fetch_data(
+        # FIXED: Use .age sub-module (SC4001E0-SC4020E0)
+        data_path = sleep_physionet.age.fetch_data(
             subjects=[subject_id], 
             recording=[recording_id]
-        )
+        )  # Returns [raw_edf_path, hypnogram_edf_path]
         
-        # Load raw EEG
+        # Load raw (EEG Fpz-Cz or similar)
         raw = mne.io.read_raw_edf(data_path[0], preload=True, verbose=False)
         
-        # Get annotations (sleep stages)
-        if len(data_path) > 1:
-            annotations = mne.read_annotations(data_path[1])
-            raw.set_annotations(annotations, emit_warning=False)
-        else:
-            annotations = None
+        # Load annotations (sleep stages: W/N1/N2/N3/REM/MVT)
+        annotations = mne.read_annotations(data_path[1])
+        raw.set_annotations(annotations, emit_warning=False)
         
-        # Extract first EEG channel (Fpz-Cz)
-        signal = raw.get_data(picks=[0])[0]
+        # Pick EEG channel (usually index 0: Fpz-Cz)
+        signal = raw.get_data(picks=[0])[0] * 1e6  # Convert to µV if needed
         fs = raw.info['sfreq']
         
-        print(f"\n✓ Successfully loaded EEG data:")
-        print(f"  - Subject: {subject_id}, Recording: {recording_id}")
+        print(f"\n✓ Loaded SC{subject_id+1:02d}E{recording_id}:")
         print(f"  - Channel: {raw.ch_names[0]}")
         print(f"  - Samples: {len(signal):,}")
-        print(f"  - Sampling rate: {fs} Hz")
-        print(f"  - Duration: {len(signal)/fs/3600:.2f} hours")
-        print(f"  - Signal range: [{np.min(signal):.2f}, {np.max(signal):.2f}] µV")
-        
-        if annotations:
-            print(f"  - Sleep stage annotations: {len(annotations)} epochs")
+        print(f"  - fs: {fs} Hz")
+        print(f"  - Duration: {len(signal)/fs/3600:.1f} h")
+        print(f"  - Range: [{np.min(signal):.1f}, {np.max(signal):.1f}] µV")
+        print(f"  - Stages: {len(annotations)} events")
         
         return signal, fs, annotations
         
     except ImportError:
-        print("\n✗ ERROR: MNE not installed")
-        print("Install with: pip install mne")
-        return None, None, None
+        raise ImportError("Install MNE: pip install mne[full]")
     except Exception as e:
-        print(f"\n✗ ERROR loading data: {e}")
-        return None, None, None
+        raise RuntimeError(f"PhysioNet load failed: {e}\nTry: pip install mne --upgrade")
 
 # ============================================================================
 # SIGNAL PROCESSING FUNCTIONS
