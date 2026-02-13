@@ -294,15 +294,18 @@ The repository uses a **trust-but-verify** model:
 
 **A:** Minor inconsistencies exist:
 
-- **README.md:** "p < 0.0000003"
+- **README.md:** "p < 0.0000003" (which equals 3e-7)
 - **Research paper:** "p = 1.33e-216"
 
 Both indicate extreme statistical significance, but exact value differs. This suggests:
-- Different analysis runs or subsets
-- Rounding/presentation differences
-- Potential documentation lag
+- Different analysis runs or data subsets
+- Rounding/presentation differences for different audiences
+- README uses simplified notation; research paper uses exact value
+- Potential documentation update lag
 
-**Recommendation:** Treat both as "very significant (p << 0.001)" until unified
+**Note:** Both values indicate results far beyond any reasonable doubt (p << 0.001). The discrepancy should be resolved by the repository maintainer to provide consistent reporting across all documentation.
+
+**Recommendation:** Treat both as "very significant (p << 0.001)" and request clarification from maintainer
 
 ---
 

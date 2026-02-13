@@ -60,7 +60,7 @@ results/
 - Cross-subject consistency metrics
 - Overall p-values and effect sizes
 
-## Key Metrics (Claimed - Not Yet Verified with Published Data)
+## Key Metrics (Claimed - Not Yet Verified with Result Files)
 
 These metrics are **claimed in project documentation** but not yet verified with actual result files:
 
@@ -85,7 +85,7 @@ These metrics are **claimed in project documentation** but not yet verified with
 - Measures probability results occurred by chance
 - 1.33e-216 means 0.0000...0001 (216 zeros) chance of randomness
 - Indicates extremely strong statistical significance
-- Standard threshold is 0.05, so this is **10^214 times more significant**
+- Standard threshold is 0.05, so this is **approximately 10^214 times more significant**
 
 **Δ_sym (Symmetry Delta):**
 - Calculated as: |Peaks - Troughs| / max(Peaks, Troughs)
