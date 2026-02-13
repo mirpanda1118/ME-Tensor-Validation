@@ -75,7 +75,7 @@ These 10 fixed coefficients have been validated across multiple domains and can 
   - **Stability:** ME Tensor ratio 0.99968 ± 0.00088 (2,250× more stable than random tensors)
   
 **Verification Evidence:**
-  - ✅ Fixed coefficients defined in 2024, tested on data collected 2000-2019 (temporal impossibility of data leakage)
+  - ✅ Fixed coefficients defined independently, tested on publicly archived data
   - ✅ Control experiments: 50 random tensors show ratio 0.985 ± 0.042 (vs ME Tensor 0.99968 ± 0.00088)
   - ✅ Cross-domain validation: Same coefficients work on EEG, LIGO, HST, ESA Swarm data
   - ✅ Failure transparency: HST 21/42 files (50% success rate) openly documented
@@ -290,7 +290,7 @@ The repository uses a **trust-but-verify** model:
 - Statistical significance confirmed (Z-scores 4.8-5.07σ, p<0.0000003)
 - Control experiments validate specificity (2,250× more stable than random tensors)
 - Cross-domain validation completed (EEG, LIGO, HST, ESA Swarm)
-- Temporal separation proves no data leakage (tensor defined 2024, data collected 2000-2019)
+- Fixed coefficients tested on publicly archived datasets
 - Failure transparency (HST 21/42 files openly documented)
 
 ✅ **Independent verification possible:**
@@ -420,7 +420,7 @@ Both indicate extreme statistical significance, but exact value differs. This su
 - ✅ **Negative controls verified:** Scrambled labels degrade performance, synthetic noise rejected
 
 **Verification Quality:**
-- **Temporal separation:** Tensor defined 2024, data collected 2000-2019 (impossibility of data leakage)
+- **Fixed coefficients:** No parameter tuning or modification since definition
 - **Control specificity:** 50 random tensors fail with ratio 0.985 ± 0.042 vs ME Tensor 0.99968 ± 0.00088
 - **Failure transparency:** HST 21/42 files (50% success rate) openly documented
 - **Discovery-level significance:** >5σ statistical confidence (physics discovery standard)
