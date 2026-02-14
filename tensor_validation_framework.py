@@ -328,11 +328,10 @@ def validate_operator(subject_id='SC4001E0', operator_coefficients=None):
         print(f"Statistical Significance:")
         print(f"  NREM vs Wake p-value: {results['nrem_vs_wake_pvalue']:.2e}")
         print(f"  t-statistic: {results['nrem_vs_wake_tstat']:.4f}")
-        alpha_text = f"{SIGNIFICANCE_ALPHA}"
         significance_text = (
-            f"statistically significant (α={alpha_text})"
+            f"statistically significant (α={SIGNIFICANCE_ALPHA})"
             if results.get('nrem_vs_wake_significant')
-            else f"not statistically significant (α={alpha_text})"
+            else f"not statistically significant (α={SIGNIFICANCE_ALPHA})"
         )
         print(f"  Interpretation: {significance_text}")
     print("="*70)
