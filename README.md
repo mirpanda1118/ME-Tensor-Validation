@@ -109,7 +109,7 @@ pip install numpy scipy mne
 
 ```python
 import numpy as np
-from tensor_validation_framework import validate_operator
+from tensor_validation_framework import SIGNIFICANCE_ALPHA, validate_operator
 
 # Load PhysioNet EEG data
 report = validate_operator('SC4001E0')
@@ -117,7 +117,7 @@ report = validate_operator('SC4001E0')
 # Access statistical significance
 p_value = report['results'].get('nrem_vs_wake_pvalue')
 print(f"NREM vs Wake p-value: {p_value:.2e}")
-print(f"Statistically significant (α=0.05): {report['results'].get('nrem_vs_wake_significant')}")
+print(f"Statistically significant (α={SIGNIFICANCE_ALPHA}): {report['results'].get('nrem_vs_wake_significant')}")
 ```
 
 ## Applications
