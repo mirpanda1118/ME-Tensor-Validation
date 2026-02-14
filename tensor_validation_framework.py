@@ -229,6 +229,7 @@ def compute_validation_metrics(operator, eeg_signal, sleep_stages, sampling_rate
         t_stat, p_value = stats.ttest_ind(results['symmetry_nrem'], results['symmetry_wake'])
         results['nrem_vs_wake_pvalue'] = p_value
         results['nrem_vs_wake_tstat'] = t_stat
+        results['nrem_vs_wake_significant'] = p_value < 0.05
     
     return results
 
@@ -325,6 +326,8 @@ def validate_operator(subject_id='SC4001E0', operator_coefficients=None):
         print(f"Statistical Significance:")
         print(f"  NREM vs Wake p-value: {results['nrem_vs_wake_pvalue']:.2e}")
         print(f"  t-statistic: {results['nrem_vs_wake_tstat']:.4f}")
+        significance_text = "statistically significant (α=0.05)" if results.get('nrem_vs_wake_significant') else "not statistically significant (α=0.05)"
+        print(f"  Interpretation: {significance_text}")
     print("="*70)
     
     return {

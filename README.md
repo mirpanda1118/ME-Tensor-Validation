@@ -112,12 +112,12 @@ import numpy as np
 from tensor_validation_framework import validate_operator
 
 # Load PhysioNet EEG data
-eeg_data = load_eeg_from_physionet('SC4001E0')
+report = validate_operator('SC4001E0')
 
-# Run validation
-results = validate_operator(eeg_data)
-print(f"AUC-ROC: {results['auc']:.3f}")
-print(f"p-value: {results['p_value']:.2e}")
+# Access statistical significance
+p_value = report['results'].get('nrem_vs_wake_pvalue')
+print(f"NREM vs Wake p-value: {p_value:.2e}")
+print(f"Statistically significant (α=0.05): {report['results'].get('nrem_vs_wake_significant')}")
 ```
 
 ## Applications
