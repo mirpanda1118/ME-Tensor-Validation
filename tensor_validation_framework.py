@@ -18,6 +18,8 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 import warnings
 warnings.filterwarnings('ignore')
 
+SIGNIFICANCE_ALPHA = 0.05
+
 # =============================================================================
 # CORE OPERATOR STRUCTURE (Sanitized Version)
 # =============================================================================
@@ -229,6 +231,7 @@ def compute_validation_metrics(operator, eeg_signal, sleep_stages, sampling_rate
         t_stat, p_value = stats.ttest_ind(results['symmetry_nrem'], results['symmetry_wake'])
         results['nrem_vs_wake_pvalue'] = p_value
         results['nrem_vs_wake_tstat'] = t_stat
+        results['nrem_vs_wake_significant'] = p_value < SIGNIFICANCE_ALPHA
     
     return results
 
@@ -325,6 +328,12 @@ def validate_operator(subject_id='SC4001E0', operator_coefficients=None):
         print(f"Statistical Significance:")
         print(f"  NREM vs Wake p-value: {results['nrem_vs_wake_pvalue']:.2e}")
         print(f"  t-statistic: {results['nrem_vs_wake_tstat']:.4f}")
+        significance_text = (
+            f"statistically significant (α={SIGNIFICANCE_ALPHA})"
+            if results.get('nrem_vs_wake_significant')
+            else f"not statistically significant (α={SIGNIFICANCE_ALPHA})"
+        )
+        print(f"  Interpretation: {significance_text}")
     print("="*70)
     
     return {

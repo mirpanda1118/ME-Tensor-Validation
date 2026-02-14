@@ -15,6 +15,8 @@ This repository contains validation code and results for a **non-AI, determinist
 - **7.95M data points** validated across PhysioNet Sleep-EDF Database
 - **Hardware-agnostic** design suitable for clinical and consumer applications
 
+> **What this means (plain language):** TEAPOT is a fixed math filter for EEG. When you pass raw EEG through it, the balance of peaks and troughs tells you if the brain is in stable NREM sleep versus wake/REM. The ultra-low p-value shows this pattern is extremely unlikely to be random, and the operator uses no training or AI—just the same coefficients every time.
+
 ## Key Innovation
 
 Unlike machine learning approaches, this operator:
@@ -109,15 +111,15 @@ pip install numpy scipy mne
 
 ```python
 import numpy as np
-from tensor_validation_framework import validate_operator
+from tensor_validation_framework import SIGNIFICANCE_ALPHA, validate_operator
 
 # Load PhysioNet EEG data
-eeg_data = load_eeg_from_physionet('SC4001E0')
+report = validate_operator('SC4001E0')
 
-# Run validation
-results = validate_operator(eeg_data)
-print(f"AUC-ROC: {results['auc']:.3f}")
-print(f"p-value: {results['p_value']:.2e}")
+# Access statistical significance
+p_value = report['results'].get('nrem_vs_wake_pvalue')
+print(f"NREM vs Wake p-value: {p_value:.2e}")
+print(f"Statistically significant (α={SIGNIFICANCE_ALPHA}): {report['results'].get('nrem_vs_wake_significant')}")
 ```
 
 ## Applications
