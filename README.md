@@ -15,6 +15,8 @@ This repository contains validation code and results for a **non-AI, determinist
 - **7.95M data points** validated across PhysioNet Sleep-EDF Database
 - **Hardware-agnostic** design suitable for clinical and consumer applications
 
+> **What this means (plain language):** TEAPOT is a fixed math filter for EEG. When you pass raw EEG through it, the balance of peaks and troughs tells you if the brain is in stable NREM sleep versus wake/REM. The ultra-low p-value shows this pattern is extremely unlikely to be random, and the operator uses no training or AI—just the same coefficients every time.
+
 ## Key Innovation
 
 Unlike machine learning approaches, this operator:
