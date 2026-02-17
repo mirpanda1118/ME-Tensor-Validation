@@ -15,6 +15,8 @@ This repository contains validation code and results for a **non-AI, determinist
 - **7.95M data points** validated across PhysioNet Sleep-EDF Database
 - **Hardware-agnostic** design suitable for clinical and consumer applications
 
+> **📋 Verification Status:** For detailed information about what results have been verified and what they mean, see [VERIFICATION_STATUS.md](VERIFICATION_STATUS.md). This document clarifies which claims can be independently verified and which require proprietary operator coefficients.
+
 ## Key Innovation
 
 Unlike machine learning approaches, this operator:
@@ -92,9 +94,13 @@ The operator detects this **structural invariance** without learning from data.
 ```
 TEAPOT/
 ├── README.md                          # This file
+├── VERIFICATION_STATUS.md             # What results have been verified and what they mean
 ├── LICENSE                            # MIT License
 ├── tensor_validation_framework.py     # Validation code (sanitized)
-├── TEAPOT_Research_Paper.md           # Academic documentation└── .gitignore                         # Python ignore rules
+├── TEAPOT_Research_Paper.md           # Academic documentation
+├── results/                           # Validation results directory
+│   └── README.md                      # Results structure and metrics explanation
+└── .gitignore                         # Python ignore rules
 ```
 
 ## Usage
